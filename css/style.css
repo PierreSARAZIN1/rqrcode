@@ -1,0 +1,184 @@
+
+:root {
+   /* code */
+     --bleu : #1c92e0 ;
+     --bleu_clair : #4eb0f1 ;
+     --link : #ff7417;
+     --N : #0df59c;
+     --text : #cecece;
+     --numl : #abaaac;
+     --num : #7bd17b;
+     --met : #f266ff ;
+     --def : #fff45f;
+     --bg : #000000;
+
+     /* terminal */
+}
+
+.def{
+    color: var(--def);
+    font-size: 15px;
+
+}
+
+.met{
+    color: var(--met);
+    font-size: 15px;
+
+}
+.num{
+    color: var(--num);
+    font-size: 15px;
+}
+.N{
+    color: var(--N);
+    font-size: 15px;
+}
+.clink{
+    color: var(--link);
+    font-size: 16px;
+    font-style: underline;
+
+}
+
+.blue{
+    color: var(--bleu);
+    font-size: 16px;
+}
+
+.blue_2 {
+    color: var(--bleu_clair);
+}
+.orange{
+    color: var(--link);
+    font-size: 16px;
+
+}
+.ligne{
+    color: var(--numl);
+    font-size: 16px;
+
+}
+.txt{
+    color: var(--text);
+    font-size: 16px;
+
+}
+
+
+.code {
+        background-color: var(--bg);
+        border: var(--bleu);
+        border-width: 30 px;
+        border-style: var(--link);
+
+}
+.code_a {
+    background-color: var(--bg);
+    border: var(--bleu);
+    border-width: 100px;
+    border-color: var(--link);
+    border-radius: 2%;
+
+}
+
+.link2 {
+    color: hotpink;
+}
+
+body {
+    text-align: justify;
+    background-color: #4c4177;
+    background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
+}
+
+h2{
+    font-weight: 600;
+    margin-left: 60px;
+    color:black;
+}
+
+
+
+
+p {
+    font-family: Geneva;
+    color: white;
+    font-weight: 500;
+    font-size:larger;
+}
+
+li {
+    font-size: large;
+    color: #0d0d0e;
+    font-weight: 400;
+}
+
+.qr-img {
+    float: left;
+    margin-right:20px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.a {
+    
+    animation: pulse 1s linear infinite;
+}
+
+@-webkit-keyframes "pulse" {
+0% {
+ -webkit-transform: scale(1.1);
+ transform: scale(1.1);
+}
+50% {
+-webkit-transform: scale(0.8);
+transform: scale(0.8);
+}
+100% {
+ -webkit-transform: scale(1);
+transform: scale(1);
+}
+}
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid steelblue;
+    font-size: 1.0rem;
+    letter-spacing: 2px;
+    outline: none;
+}
+
+.qr {
+    width: 80%;
+    margin-left:60px;
+    display: grid;
+    place-items: center;
+}
+
+.wave {
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    display: inline-block;
+    
+  }
+  
+  @keyframes wave-animation {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+    100% { transform: rotate( 0.0deg) }
+  }
+  

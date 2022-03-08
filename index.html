@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>QR_generator</title>
+    
+  </head>
+  <body>
+    <div class="container">
+    <br />
+    <div class="text-center">
+      <h1 style="font-size: 3em; font-weight: 700; color: #fff">
+        Build a QR<span style="font-weight: 900;">-</span>Code generator in Ruby
+        <img class="a" style="width:50px;" src="img/Ruby_logo.svg" alt="ruby-logo">
+       </h1>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container">
+      <h2>What does it do ? 🤔</h2>
+      <br />
+      <img src="img/frame.png" class="qr-img" alt="qr.code" style="width: 200px; ;">
+      <p>
+        For those who don’t already know a QR code brings together a lot of
+        information that needs to be read quickly. Behind this icon can be
+        hidden a URL (web address), a text, a payment platform, a link to a
+        social network, an image, a music, or an application.
+        <br>
+        Generating a QR-Code can be very convenient for those who want to code their own web application or for those who want to add new features such as securing their payment systems, allow its users to authenticate with a single pass or others, the possibilities are multiple! You might think it’s tedious to set it up, but with the "rqrcode" gem, in a few lines of code you can generate it  and you can brag about it to everyone, cool!! 
+        <br>
+        rQRCode is a library to encode QR codes in Ruby. It has a simple interface with all standard qrcode options. It was adapted from the Javascript library by Kazuhiko Arase.
+        <br>
+        For more information on the gem :
+        <a class="link2" href="https://www.rubydoc.info/gems/rqrcode/0.6.0">  Ruby Doc !</a>
+      </p>
+      <br>
+      <h2>Tutorial 👇</h2>
+      <br>
+      <p>Once you create your folder with your ruby file inside:</p>
+      
+      <p>⏣ Add the rqrcode gem to your Gemfile without forgetting a bundle install.</span></p>
+      <p>⏣ At the top of your ruby file type this for your file to use a rqrcode:</span></p>
+        </div>
+      <br>
+      <p></p>
+
+      <!-- encadré code 1 -->
+      <div class="container"> 
+        <pre class="code_a"><code>
+          <p>    <strong class="blue">require</strong> <strong class="orange">'rqrcode'</strong> </p>  
+        </code></pre>
+        </div>
+      <br>
+      <p>⏣ Creates a variable equal to RQRCode::QRCode.new(“your url”):</span></p>
+
+      <!-- encadré code 2 -->
+      <div class="container">
+        <pre class="code_a"><code>
+          <p>     <strong class="blue">require</strong> <strong class="orange">'rqrcode'</strong> 
+
+      <strong class="txt">qr_code = </strong><strong class="N">RQRCode</strong><strong class="txt">::</strong><strong class="N">QRCode</strong><strong class="txt">.</strong><strong class="blue">new</strong><strong class="orange">("https://www.thehackingproject.org/?locale=fr")</strong></p>  
+        </code></pre>
+        </div>
+      <br>
+      <p>⏣ Creates a new variable that defines the style and format of the qr-code:</span></p>
+
+      <!-- encadré code 3 -->
+      <div class="container">
+        <pre class="code_a"><code>
+          <p>  <strong class="blue">require</strong> <strong class="orange">'rqrcode'</strong> 
+
+   <strong class="txt">qr_code = </strong><strong class="N">RQRCode</strong><strong class="txt">::</strong><strong class="N">QRCode</strong><strong class="txt">.</strong><strong class="blue">new</strong><strong class="orange">("https://www.thehackingproject.org/?locale=fr")</strong>
+
+    <strong class="txt">png = qr_code.as_png(</strong>
+      <strong class="txt">color: </strong><strong class="orange">"black"</strong><strong class="txt">,</strong>
+      <strong class="txt">fill: </strong><strong class="orange">"white"</strong><strong class="txt">,</strong>
+      <strong class="txt">size: </strong><strong class="num">300</strong>
+    <strong class="txt">)</strong>
+</p>
+  
+      </code></pre>
+        </div>
+      <p style="font-style: italic; font-size: medium;" >* As you can see above, you can change the color and size. To change the format (here in png) to svg format, replace '.as_png' with 'as_svg' and change . png to . svg on the file name of the qr-code in the next line.</p>
+      <br>
+      <p>⏣ Type this last line:</span></p>
+
+      <!-- encadré code 4 -->
+      <div class="container">
+        <pre class="code_a"><code>
+          <p>     <strong class="blue">require</strong> <strong class="orange">'rqrcode'</strong> 
+            
+    <strong class="txt">qr_code = </strong><strong class="N">RQRCode</strong><strong class="txt">::</strong><strong class="N">QRCode</strong><strong class="txt">.</strong><strong class="blue">new</strong><strong class="orange">("https://www.thehackingproject.org/?locale=fr")</strong>
+
+    <strong class="txt">png = qr_code.as_png(</strong>
+        <strong class="txt">color: </strong><strong class="orange">"black"</strong><strong class="txt">,</strong>
+        <strong class="txt">fill: </strong><strong class="orange">"white"</strong><strong class="txt">,</strong>
+        <strong class="txt">size: </strong><strong class="num">300</strong>
+    <strong class="txt">)</strong>
+
+  <strong class="N">IO</strong><strong class="txt">.binwrite(</strong><strong class="orange">"website.png"</strong><strong class="txt">, png.to_s)</strong>
+   </p></code></pre>
+        </div>
+        <p style="font-style: italic; font-size: medium;" >* The IO base is the basis for all input and output in ruby! IO.binwrite opens the file, optionally looks for the given offset, writes the string, then returns the written length. 
+        <a class="link2" href="https://ruby-doc.org/core-2.7.0/IO.html">  Ruby Doc !</a> </p>
+      <br>
+      <p>Ok! Now you can go to your terminal and type : 
+      </p>
+
+        <!-- encadré code 5 -->
+        <div class="container">
+          <pre class="code_a"><code>
+<p>   <strong class="N">$</strong><strong class="txt"> ruby yourfile.rb</strong>
+</p></code></pre>
+          </div>
+        <p>Ta-da !👏  You can go to your folder where your ruby file is and you will find your qrcode, flashes it to be sure it’s running</p>
+       <br>
+       
+       <div class="qr">
+       <input 
+         type="text" 
+         spellcheck="false"
+         id="text"
+         value="https://google.com"
+       />
+       <div id="qrcode"></div>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+       <script type="text/javascript">
+     
+       const qrcode = document.getElementById("qrcode");
+       const textInput = document.getElementById("text");
+       
+       const qr = new QRCode(qrcode);
+       qr.makeCode(textInput.value.trim());
+       
+       textInput.oninput = (e) => {
+         qr.makeCode(e.target.value.trim());
+       };
+       
+       </script>
+       </div>
+       <br>
+       <p>For developers who use
+        Rails, creating a Qr-Code generator similar to the one above is not complicated, I’ll show you.</p>
+        <p>⚙︎ Create a controller and configure your routes:</p>
+
+        <!-- encadré code 6 -->
+        <div class="container">
+          <pre class="code_a"><code>
+            <p>     <strong class="N">Rails</strong><strong class="txt">.application.routes.draw </strong><strong class="met">do</strong>
+      <strong class="txt">resources :qrcode, only: [:new, :create]</strong>
+     <strong class="met">end</strong>
+</p></code></pre>
+          </div>
+        <br>
+        <p>⚙︎ Then your controller : </p>
+
+         <!-- encadré code 7 -->
+        <div class="container">
+          <pre class="code_a"><code>
+            <p>     <strong class="met">class </strong><strong class="N">QrcodeController</strong><strong class="txt"> < </strong><strong class="N">ApplicationController</strong>
+              <strong class="met">def </strong><strong class="def"> new</strong>
+              <strong class="met">end </strong>
+
+              <strong class="met">def </strong><strong class="def"> create</strong>
+                <strong class="txt">send_date </strong><strong class="N">RQRCode</strong><strong class="txt">::</strong><strong class="N">QRCode</strong><strong class="txt">.</strong><strong class="blue">new</strong><strong class="txt">(params[:content].to_s).as_png(size: </strong><strong class="num">300</strong><strong class="txt">), type: </strong><strong class="orange">'image/png'</strong><strong class="txt">, disposition: </strong><strong class="orange">'attachment'</strong>
+              <strong class="met">end </strong>
+
+      <strong class="met">end </strong>
+</p></code></pre>
+          </div>
+        <br>
+        <p>⚙︎ Finally type this code in your view :</p>
+        <!-- encadré code 8 -->
+        <div class="container">
+          <pre class="code_a"><code>
+            <p>     <strong class="txt"><%= form_tag url_for(action:</strong><strong class="orange"> 'create'</strong><strong class="txt">), method: </strong><strong class="orange"> "post"</strong><strong class="met"> do </strong><strong class="txt">|</strong><strong class="blue_2">f</strong><strong class="txt">|</strong><strong class="txt"> %></strong>
+        <strong class="orange"><</strong><strong class="orange">div class="field"> </strong>
+        <strong class="txt"><%= label_tag</strong><strong class="orange"> 'Text or URL' %></strong>
+        <strong class="orange"><%= text_field_tag :content, nil, required: true %></strong>
+        <strong class="txt"><</strong><strong class="txt">/div></strong>
+
+      <strong class="orange"><</strong><strong class="orange">div </strong><strong class="met">class</strong><strong class="txt">=</strong><strong class="orange">"actions"</strong><strong class="txt">></strong>
+        <strong class="txt"><%= submit_tag</strong><strong class="orange"> 'Generate QR code' %></strong>
+      <strong class="orange"><</strong><strong class="orange">/div></strong>
+    <strong class="txt"><% </strong><strong class="met">end</strong><strong class="orange"> %></strong>
+
+</p></code></pre>
+          </div>
+        <br>
+        <p>Basically the view is to display a form where the user can add his text or URL and then it sends a request to the create method which actually generates a PNG (or SVG if you want) for the QR code. The QR code will be downloaded on the user device since we use disposition: 'attachment'.
+
+          Finally, if we prefer to display the QR code instead of downloading it, we can do disposition: 'inline'.</p>
+          <br>
+          <p>Now you can generate a Qr-code or create a generator on your app, I hope this little tutorial helped you ! <span style="font-size:2em;" class="wave">👋</span></p>
+          <br>
+          <hr>
+    </div>
+  </div>   
+  </body>
+</html>
+
